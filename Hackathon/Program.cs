@@ -25,10 +25,14 @@ namespace Hackathon
         static void Main(string[] args)
         {
             
-            string[] array1 = { "Arun", "Aman", "Dinesh", "Manpreet", "xv", "Gagandeep", "Parminder", "Ravneet", "Manjot", "Isha","Dheeraj","Simran","Gurpreet","Amanjot","joe" };
+            string[] array1 = { "Arun", "Aman", "Dinesh", "Manpreet", "Ravinder", "Gagandeep", "Parminder", "Ravneet", "Manjot", "Isha","Dheeraj","Simran","Gurpreet","Amanjot","joe","joseph" };
+            string[] team1 = new string[4];
+            string[] team2 = new string[4];
+            string[] team3 = new string[4];
+            string[] team4 = new string[4];
             for (int i = 0; i <= array1.Length; i++)
                 
-            {
+            {  
                 if (i == 0 || i == 3 || i == 7 || i == 11 || i == 15)
                 {
                     
@@ -46,8 +50,31 @@ namespace Hackathon
                 {
                     Console.WriteLine("Team D: " + array1[i]);
                 }
-
+                
             }
+            checkVowels();
+        }
+
+        public static int checkVowels()
+        {
+            int f = 0;
+            string[] vowel = new string[] { "a", "e", "i", "o", "u" };
+            Console.WriteLine("Enter a character");
+            String s=Console.ReadLine();
+            for(int i = 0; i < s.Length; i++)
+            {
+                if (vowel[i] == s.ToLower())
+                {
+                    Console.WriteLine("this character is in the list at"  + " position " + (i + 1));
+                    f = i;
+                }
+                else
+                {
+                    Console.WriteLine("not there");
+                    f = -1;
+                }
+            }
+            return f;
         }
     }
 }
